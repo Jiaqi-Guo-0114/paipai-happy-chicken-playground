@@ -1,0 +1,33 @@
+{
+  "id": "./index.html",
+  "name": "派派的快乐小鸡乐园",
+  "short_name": "快乐小鸡",
+  "description": "通过六种亲子小游戏，循序练习单击、连续点击、按住拖动、路径控制和精准放置。",
+  "lang": "zh-CN",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "fullscreen",
+  "display_override": ["fullscreen", "standalone"],
+  "orientation": "landscape",
+  "background_color": "#31afe7",
+  "theme_color": "#31afe7",
+  "icons": [
+    {
+      "src": "assets/icons/icon-180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

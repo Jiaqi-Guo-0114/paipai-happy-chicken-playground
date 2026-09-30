@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <meta name="theme-color" content="#37a9ec">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="快乐小鸡">
+  <meta name="format-detection" content="telephone=no">
+  <title>派派的快乐小鸡乐园</title>
+  <link rel="apple-touch-icon" href="assets/icons/icon-180.png">
+  <link rel="icon" href="assets/icons/icon-192.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app" aria-label="派派的快乐小鸡乐园">
+    <canvas id="gameCanvas" width="1280" height="720" aria-label="游戏画面"></canvas>
+
+    <div id="topBar" class="top-bar hidden" aria-label="游戏导航">
+      <button id="backButton" class="round-button back-button" type="button" aria-label="返回游戏菜单"><span aria-hidden="true">‹</span></button>
+      <button id="settingsButton" class="round-button settings-button" type="button" aria-label="打开设置"><span aria-hidden="true">⚙</span></button>
+    </div>
+
+    <div id="caption" class="caption hidden" role="status" aria-live="polite"></div>
+    <div id="offlineStatus" class="offline-status hidden" role="status">
+      <span class="status-dot" aria-hidden="true"></span>
+      <span id="offlineStatusText">正在准备离线资源…</span>
+    </div>
+
+    <section id="settingsPanel" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
+      <div class="modal-card settings-card">
+        <button id="closeSettings" class="modal-close" type="button" aria-label="关闭设置">×</button>
+        <h2 id="settingsTitle">训练设置</h2>
+        <div class="setting-row"><span id="languageLabel">语言 / Language</span><button class="language-button" id="languageToggle" type="button" aria-label="切换语言">中文</button></div>
+        <div class="setting-row"><span>游戏音效</span><button class="toggle" id="sfxToggle" type="button" role="switch" aria-checked="true"><span></span></button></div>
+        <div class="setting-row"><span>中文提示音</span><button class="toggle" id="voiceToggle" type="button" role="switch" aria-checked="true"><span></span></button></div>
+        <div class="settings-divider"></div>
+        <button id="resetScores" class="danger-button" type="button">重置训练记录</button>
+        <button id="resetStickers" class="danger-button" type="button">重置贴纸册</button>
+        <p class="settings-note">进度只保存在当前这台设备中。</p>
+      </div>
+    </section>
+
+    <section id="confirmPanel" class="modal hidden" role="alertdialog" aria-modal="true" aria-labelledby="confirmTitle">
+      <div class="modal-card confirm-card">
+        <div class="confirm-icon" aria-hidden="true">!</div>
+        <h2 id="confirmTitle">确定要重置吗？</h2>
+        <p id="confirmMessage"></p>
+        <div class="confirm-actions">
+          <button id="confirmCancel" class="secondary-button" type="button">取消</button>
+          <button id="confirmOkay" class="danger-button" type="button">确定重置</button>
+        </div>
+      </div>
+    </section>
+
+    <div id="rotateNotice" class="rotate-notice" role="status">
+      <div class="rotate-device" aria-hidden="true"><span></span></div>
+      <h1>请把设备横过来</h1>
+      <p>快乐小鸡要在横屏里玩</p>
+    </div>
+  </div>
+
+  <noscript>需要启用 JavaScript 才能玩这个游戏。</noscript>
+  <script src="assets.js"></script>
+  <script src="js/core.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/art.js"></script>
+  <script src="js/games.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
