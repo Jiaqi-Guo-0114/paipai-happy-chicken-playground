@@ -39,7 +39,7 @@ node tests/browser-smoke.mjs http://127.0.0.1:4173/index.html
 中文提示语已使用 Qwen3-TTS 1.7B 的 Serena 普通话女声音色在本机离线生成，并加入自然、轻快而克制的儿童游戏引导语气。游戏内只加载生成后的 WAV 文件。以后需要重新生成时，可在 Apple Silicon Mac 上运行：
 
 ```sh
-/Users/guo/.local/bin/uv run --python 3.12 --with mlx-audio python tools/generate_qwen_voice.py
+uv run --python 3.12 --with mlx-audio python tools/generate_qwen_voice.py
 ```
 
 模型许可和来源见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。
